@@ -11,6 +11,7 @@ cd /kaggle/working/pytorch-retinanet/lib/nms/src/cuda
 echo "Compiling nms kernels by nvcc..."
 /usr/local/cuda/bin/nvcc -c -o nms_kernel.cu.o nms_kernel.cu -x cu -Xcompiler -fPIC $CUDA_ARCH
 echo "... done"
-cd ../../
+echo "Running build.py..."
+cd /kaggle/working/pytorch-retinanet/lib/nms
 python build.py
-cd ../
+echo "... done"
